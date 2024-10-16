@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.h": "c"
+    },
+    "C_Cpp.formatting": "vcFormat",
+    "C_Cpp.vcFormat.newLine.beforeElse": false,
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "ignore",
+    "C_Cpp.vcFormat.space.pointerReferenceAlignment": "ignore"
+}
