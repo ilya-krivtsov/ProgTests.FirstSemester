@@ -3,7 +3,7 @@
 
 #include "binaryToDecimal.h"
 
-int main() {
+int main(void) {
     printf("input binary number: ");
     char input[256] = { 0 };
     if (scanf("%255s", input) != 1) {
