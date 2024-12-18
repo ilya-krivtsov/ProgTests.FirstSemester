@@ -1,10 +1,7 @@
 name: Build And Test
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  push
 
 jobs:
   build:
@@ -13,6 +10,12 @@ jobs:
       matrix:
         os: [ubuntu-24.04]
 
+    env:
+      TESTS_CMAKE: cmake
+      TESTS_CMAKE_COMPILER: gcc
+      TESTS_CMAKE_GENERATOR: "Unix Makefiles"
+      TESTS_EXE_EXTENSION: none
+
     steps:
     - name: Clone repository
       uses: actions/checkout@v4
@@ -20,17 +23,7 @@ jobs:
         submodules: recursive
 
     - name: Build
-      env:
-          TESTS_CMAKE: cmake
-          TESTS_CMAKE_COMPILER: gcc
-          TESTS_CMAKE_GENERATOR: "Unix Makefiles"
-          TESTS_EXE_EXTENSION: none
       run: bash build.sh buildAll --clear --release
 
     - name: Test
-      env:
-          TESTS_CMAKE: cmake
-          TESTS_CMAKE_COMPILER: gcc
-          TESTS_CMAKE_GENERATOR: "Unix Makefiles"
-          TESTS_EXE_EXTENSION: none
       run: bash build.sh testAll --clear --release
