@@ -50,6 +50,8 @@ bool addToHashset(Hashset *hashset, const char *string) {
     }
 
     hashset->elements[elementIndex] = stringCopy;
+
+    return true;
 }
 
 bool containedInHashset(Hashset *hashset, const char *string) {
