@@ -1,4 +1,4 @@
-project(test_2_1)
+project(test_final)
 
 set(testName "${PROJECT_NAME}")
 
